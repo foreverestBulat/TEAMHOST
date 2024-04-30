@@ -1,7 +1,6 @@
-﻿using WebTeamHost.Application.Interfaces.Repositories;
+﻿using WebTeamHost.App.Interfaces.Repositories;
 using WebTeamHost.Domain.Common;
 using WebTeamHost.Persistance.Contexts;
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 

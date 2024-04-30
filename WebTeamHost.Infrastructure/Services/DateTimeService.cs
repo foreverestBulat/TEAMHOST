@@ -1,4 +1,4 @@
-﻿using WebTeamHost.Application.Interfaces;
+﻿using WebTeamHost.App.Interfaces;
 
 namespace WebTeamHost.Infrastructure.Services
 {

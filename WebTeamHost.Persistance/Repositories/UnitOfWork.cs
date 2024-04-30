@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-
-using WebTeamHost.Application.Interfaces.Repositories;
+﻿using System.Collections;
+using WebTeamHost.App.Interfaces.Repositories;
 using WebTeamHost.Domain.Common;
-using WebTeamHost.Domain.Common.Interfaces;
 using WebTeamHost.Persistance.Contexts;
 
 namespace WebTeamHost.Persistance.Repositories

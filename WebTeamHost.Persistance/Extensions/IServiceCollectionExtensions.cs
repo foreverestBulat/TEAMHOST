@@ -1,4 +1,4 @@
-﻿using WebTeamHost.Application.Interfaces.Repositories;
+﻿using WebTeamHost.App.Interfaces.Repositories;
 using WebTeamHost.Persistance.Contexts;
 using WebTeamHost.Persistance.Repositories;
 

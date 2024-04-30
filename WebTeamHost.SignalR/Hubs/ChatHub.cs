@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.IdentityModel.Tokens;
-using WebTeamHost.Application.Features.Messages.Commands.CreateMessage;
+using WebTeamHost.App.Features.Messages.Commands.CreateMessage;
 
 namespace WebTeamHost.SignalR.Hubs
 {

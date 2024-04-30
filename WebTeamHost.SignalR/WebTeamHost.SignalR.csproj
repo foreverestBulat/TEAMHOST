@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanArchotecture.Application\WebTeamHost.Application.csproj" />
     <ProjectReference Include="..\WebTeamHost.Domain\WebTeamHost.Domain.csproj" />
     <ProjectReference Include="..\WebTeamHost.Persistance\WebTeamHost.Persistance.csproj" />
   </ItemGroup>

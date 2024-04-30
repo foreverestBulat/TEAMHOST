@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\Mappings\" />
+    <Folder Include="Common\Exceptions\" />
+    <Folder Include="DTOs\Email\" />
+    <Folder Include="Features\Countries\Commands\" />
+    <Folder Include="Features\Countries\Queries\" />
+    <Folder Include="Features\Developers\Commands\" />
+    <Folder Include="Features\Developers\Queries\" />
+    <Folder Include="Features\Games\Commands\" />
+    <Folder Include="Features\Games\Queries\" />
+    <Folder Include="Features\Groups\Commands\" />
+    <Folder Include="Features\Groups\Queries\" />
+    <Folder Include="Features\Messages\" />
+    <Folder Include="Features\UserGroups\" />
+    <Folder Include="Features\Users\" />
+    <Folder Include="Features\UsersInfo\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+</Project>

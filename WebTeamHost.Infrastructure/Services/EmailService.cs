@@ -1,6 +1,6 @@
 ﻿using System.Net.Mail;
-using WebTeamHost.Application.DTOs.Email;
-using WebTeamHost.Application.Interfaces;
+using WebTeamHost.App.DTOs.Email;
+using WebTeamHost.App.Interfaces;
 
 namespace WebTeamHost.Infrastructure.Services
 {

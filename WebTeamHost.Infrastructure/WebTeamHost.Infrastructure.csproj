@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanArchotecture.Application\WebTeamHost.Application.csproj" />
+    <ProjectReference Include="..\WebTeamHost.App\WebTeamHost.App.csproj" />
   </ItemGroup>
 
 </Project>
