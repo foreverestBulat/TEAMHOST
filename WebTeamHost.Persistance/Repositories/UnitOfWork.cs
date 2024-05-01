@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Microsoft.Extensions.Caching.Distributed;
+using System.Collections;
 using WebTeamHost.App.Interfaces.Repositories;
 using WebTeamHost.Domain.Common;
 using WebTeamHost.Persistance.Contexts;
@@ -8,12 +9,14 @@ namespace WebTeamHost.Persistance.Repositories
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _dbContext;
+        private readonly IDistributedCache _distributedCache;
         private Hashtable _repositories;
         private bool disposed;
 
-        public UnitOfWork(ApplicationDbContext dbContext)
+        public UnitOfWork(ApplicationDbContext dbContext, IDistributedCache distributedCache)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
+            _distributedCache = distributedCache;
         }
 
         public IGenericRepository<T> Repository<T>() where T : BaseAuditableEntity
@@ -27,7 +30,7 @@ namespace WebTeamHost.Persistance.Repositories
             {
                 var repositoryType = typeof(GenericRepository<>);
 
-                var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(T)), _dbContext);
+                var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(T)), _dbContext, _distributedCache);
 
                 _repositories.Add(type, repositoryInstance);
             }

@@ -15,16 +15,17 @@ namespace WebTeamHost.Persistance.Extensions
     {
         public static void AddPersistenceLayer(this IServiceCollection services, IConfiguration configuration)
         {
-            //services.AddMappings();
+            services.AddMappings();
             services.AddDbContext(configuration);
             services.AddIdentityAuth();
+            services.AddRedis(configuration);
             services.AddRepositories();
         }
 
-        //private static void AddMappings(this IServiceCollection services)
-        //{
-        //    services.AddAutoMapper(Assembly.GetExecutingAssembly());
-        //}
+        private static void AddMappings(this IServiceCollection services)
+        {
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        }
 
         public static void AddIdentityAuth(this IServiceCollection services)
         {
@@ -45,6 +46,14 @@ namespace WebTeamHost.Persistance.Extensions
                 //options.UseSqlServer(connectionString));
                //options.UseSqlServer(connectionString,
                //    builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+        }
+
+        public static void AddRedis(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = configuration.GetConnectionString("RedisConnection");
+            });
         }
 
         private static void AddRepositories(this IServiceCollection services)

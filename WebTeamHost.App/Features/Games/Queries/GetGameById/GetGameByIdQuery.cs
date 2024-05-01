@@ -38,7 +38,8 @@ namespace WebTeamHost.App.Features.Games.Queries.GetGameById
 
         public async Task<Result<GetGameByIdDto>> Handle(GetGameByIdQuery query, CancellationToken cancellationToken)
         {
-            var entity = await _unitOfWork.Repository<Game>().GetByIdAsync(query.Id);
+            var entity = await _unitOfWork.Repository<Game>().GetFromCacheById(query.Id, cancellationToken);
+            //var entity = await _unitOfWork.Repository<Game>().GetByIdAsync(query.Id); // GetFromCacheById(query.Id, cancellationToken);
             Console.WriteLine(entity.Name);
             var game = _mapper.Map<GetGameByIdDto>(entity);
             return await Result<GetGameByIdDto>.SuccessAsync(game);

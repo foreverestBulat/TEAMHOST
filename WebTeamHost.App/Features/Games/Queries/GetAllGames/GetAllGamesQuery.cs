@@ -27,9 +27,11 @@ namespace WebTeamHost.App.Features.Games.Queries.GetAllGames
 
         public async Task<Result<List<GetAllGamesDto>>> Handle(GetAllGamesQuery query, CancellationToken cancellationToken)
         {
-            var games = await _unitOfWork.Repository<Game>().Entities
-                   .ProjectTo<GetAllGamesDto>(_mapper.ConfigurationProvider)
-                   .ToListAsync(cancellationToken);
+            var entities = await _unitOfWork.Repository<Game>().GetAllAsync();
+            var games = _mapper.Map<List<GetAllGamesDto>>(entities);
+                //.Entities
+                   //.ProjectTo<GetAllGamesDto>(_mapper.ConfigurationProvider)
+                   //.ToListAsync(cancellationToken);
 
             return await Result<List<GetAllGamesDto>>.SuccessAsync(games);
         }

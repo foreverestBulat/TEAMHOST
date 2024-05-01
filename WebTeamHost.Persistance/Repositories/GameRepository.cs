@@ -11,5 +11,11 @@ namespace WebTeamHost.Persistance.Repositories
         {   
             _repository = repository;
         }
+        
+        public async Task<Game> GetGameFromCacheById(int id, CancellationToken cancellationToken)
+        {
+
+            return await _repository.GetByIdAsync(id);
+        }
     }
 }

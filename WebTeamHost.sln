@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamHost", "..\lesson TeamH
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTeamHost.SignalR", "WebTeamHost.SignalR\WebTeamHost.SignalR.csproj", "{A5647AB8-E662-46F4-A0E7-FBF8FA5C23FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTeamHost.App", "WebTeamHost.App\WebTeamHost.App.csproj", "{4215879D-ECDF-47EC-9259-11DF7E9EC876}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTeamHost.App", "WebTeamHost.App\WebTeamHost.App.csproj", "{4215879D-ECDF-47EC-9259-11DF7E9EC876}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTeamHost.Redis", "WebTeamHost.Redis\WebTeamHost.Redis.csproj", "{9ED745F4-1ECE-45C9-AA72-7A3E9C6D0308}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{4215879D-ECDF-47EC-9259-11DF7E9EC876}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4215879D-ECDF-47EC-9259-11DF7E9EC876}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4215879D-ECDF-47EC-9259-11DF7E9EC876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ED745F4-1ECE-45C9-AA72-7A3E9C6D0308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ED745F4-1ECE-45C9-AA72-7A3E9C6D0308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ED745F4-1ECE-45C9-AA72-7A3E9C6D0308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ED745F4-1ECE-45C9-AA72-7A3E9C6D0308}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +77,7 @@ Global
 		{25D6185E-2EBC-4532-9755-FD4A312E402E} = {7D4BF1EC-7ED2-45A8-AC53-C81D8785D930}
 		{A5647AB8-E662-46F4-A0E7-FBF8FA5C23FA} = {FABFB426-73B2-4121-BD7B-843F2F6D0CB4}
 		{4215879D-ECDF-47EC-9259-11DF7E9EC876} = {0DCEFFC3-884B-42B4-9708-6FE8BE0C6AB2}
+		{9ED745F4-1ECE-45C9-AA72-7A3E9C6D0308} = {FABFB426-73B2-4121-BD7B-843F2F6D0CB4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {68A33B0B-296A-41B4-A05D-823A7A8C88B9}
