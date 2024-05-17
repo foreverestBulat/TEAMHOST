@@ -8,6 +8,7 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using WebTeamHost.Domain.Entities;
+using Microsoft.AspNetCore.Builder;
 
 namespace WebTeamHost.Persistance.Extensions
 {
@@ -54,6 +55,14 @@ namespace WebTeamHost.Persistance.Extensions
             {
                 options.Configuration = configuration.GetConnectionString("RedisConnection");
             });
+        }
+
+        public static void ApplyMigration(this IApplicationBuilder app)
+        {
+            using IServiceScope scope = app.ApplicationServices.CreateScope();
+            using ApplicationDbContext context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            
+            context.Database.Migrate();
         }
 
         private static void AddRepositories(this IServiceCollection services)

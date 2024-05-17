@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  teamhost:
+    image: ${DOCKER_REGISTRY-}teamhost
+    restart: always
+    build:
+      context: .
+      dockerfile: TeamHost/Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+
+  teamhost.database:
+    image: postgres:alpine
+    container_name: teamhost.database
+    environment: 
+      - POSTGRES_DB=TeamHost-project
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=subuhankulov
+    volumes:
+      - ./.containers/teamhost-db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  teamhost.cache:
+    image: redis:alpine
+    restart: always
+    ports:
+      - '6379:6379'
