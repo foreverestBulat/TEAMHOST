@@ -2,6 +2,7 @@ version: '3.4'
 
 services:
   teamhost:
+    container_name: teamhost
     image: ${DOCKER_REGISTRY-}teamhost
     restart: always
     build:
@@ -28,3 +29,6 @@ services:
     restart: always
     ports:
       - '6379:6379'
+
+  proxy:
+    image: nginx:mainline  
